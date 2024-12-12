@@ -3,7 +3,7 @@ use proc_macro::TokenStream;
 use quote::quote;
 use syn::{parse_macro_input, DeriveInput};
 
-#[proc_macro_derive(Identify)]
+#[proc_macro_derive(Identify, attributes(friendly_name))]
 pub fn derive_identify(input: TokenStream) -> TokenStream {
     let DeriveInput {
         ident: type_name, ..
