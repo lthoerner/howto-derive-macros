@@ -6,8 +6,11 @@ trait Identify {
 }
 
 #[derive(Identify)]
+#[friendly_name("foo type")]
 struct FooType;
+
 #[derive(Identify)]
+#[friendly_name("bar type")]
 struct BarType;
 
 fn main() {
