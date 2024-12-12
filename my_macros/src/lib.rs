@@ -4,6 +4,10 @@ use deluxe::ExtractAttributes;
 use quote::quote;
 use syn::{parse_macro_input, DeriveInput};
 
+#[derive(ExtractAttributes)]
+#[deluxe(attributes(friendly_name))]
+struct FriendlyNameAttribute(String);
+
 #[proc_macro_derive(Identify, attributes(friendly_name))]
 pub fn derive_identify(input: TokenStream) -> TokenStream {
     let DeriveInput {
