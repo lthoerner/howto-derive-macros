@@ -1,3 +1,5 @@
+use my_macros::Identify;
+
 trait Identify {
     fn type_name(&self) -> &'static str;
 }
