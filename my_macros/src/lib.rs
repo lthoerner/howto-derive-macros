@@ -10,5 +10,12 @@ pub fn derive_identify(input: TokenStream) -> TokenStream {
     } = parse_macro_input!(input);
     let type_name_string = type_name.clone().to_string();
 
-    todo!()
+    quote! {
+        impl crate::Identify for #type_name {
+            fn type_name(&self) -> &'static str {
+                #type_name_string
+            }
+        }
+    }
+    .into()
 }
